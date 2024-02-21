@@ -24,7 +24,7 @@ class Propietario {
   }
 
   get datosPropietario() {
-    return (`* El nombre del dueno es: ${this._nombre}. El domicilio es : ${this._direccion}, y el numero telefonico de contacto es: ${this._telefono}`;
+    return (`* El nombre del dueno es: ${this._nombre}. El domicilio es : ${this._direccion}, y el numero telefonico de contacto es: ${this._telefono}`);
     }
     
 }
@@ -32,7 +32,6 @@ class Propietario {
 class Animal extends Propietario {
   constructor(nombre, direccion, telefono, tipoMascota) {
     super(nombre, direccion, telefono);
-    debugger;
     this._tipoMascota = tipoMascota;
   }
   get tipomascota() {
