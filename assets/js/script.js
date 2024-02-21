@@ -17,7 +17,8 @@ function guardarMascota(
         tipo,
         nombreMascota,
         enfermedad
-      );
+          );
+          construirRespuesta(perro);
       break;
     case "gato":
       let gato = new Mascota(
@@ -27,7 +28,8 @@ function guardarMascota(
         tipo,
         nombreMascota,
         enfermedad
-      );
+          );
+          construirRespuesta(gato);
       break;
     case "conejo":
       let conejo = new Mascota(
@@ -37,13 +39,14 @@ function guardarMascota(
         tipo,
         nombreMascota,
         enfermedad
-      );
+          );
+          construirRespuesta(conejo);
       break;
     default:
       alert(` El tipo de mascota ${tipo} no se permite `);
       break;
   }
-  construirRespuesta();
+  
 }
 function validarFormulario(
   nombre,
@@ -102,11 +105,11 @@ function leerFormulario() {
 
 
 
-function construirRespuesta() {
-    let mensaje = (`${Propietario.datosPropietario} <br>${Mascota.mostrarEnfermedad}`);
+function construirRespuesta(nuevaMascota) {
+    let mensaje = `${nuevaMascota.datosPropietario} \n ${nuevaMascota.mostrarEnfermedad}`;
     let resultado = document.getElementById("resultado");
     resultado.innerHTML = mensaje;
-   formulario.reset();
+  /*  formulario.reset(); */
 }
 
 formulario.addEventListener("submit", (e) => {
