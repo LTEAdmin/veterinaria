@@ -24,8 +24,9 @@ class Propietario {
   }
 
   get datosPropietario() {
-    return `${this._nombre}, ${this._direccion}, ${this._telefono}`;
-  }
+    return (`* El nombre del dueno es: ${this._nombre}. El domicilio es : ${this._direccion}, y el numero telefonico de contacto es: ${this._telefono}`;
+    }
+    
 }
 
 class Animal extends Propietario {
@@ -42,11 +43,22 @@ class Animal extends Propietario {
   }
   get mostrarTipo() {
     return `El tipo de mascota es: ${this._tipoMascota}`;
-  }
+    }
+    
+    getMostrarTipo() {
+        return `El tipo de mascota es un: ${this._tipoMascota}`
+    }
 }
 
 class Mascota extends Animal {
-  constructor(nombre, direccion, telefono, tipoMascota, nameMascota) {
+  constructor(
+    nombre,
+    direccion,
+    telefono,
+    tipoMascota,
+    nameMascota,
+    enfermedad
+  ) {
     super(nombre, direccion, telefono, tipoMascota);
     this._nameMascota = nameMascota;
   }
@@ -56,5 +68,15 @@ class Mascota extends Animal {
   set nameMascota(nameMacota) {
     this._nameMascota = nameMascota;
   }
+  get enfermedad() {
+    return this._enfermedad;
+  }
+  set enfermedad(enfermedad) {
+    this._enfermedad = enfermedad;
+    }
+    
+    get mostrarEnfermedad() {
+        return (`El tipo de animal es un $UperCase() ${this._tipoMascota}, mientras que el nombre de la mascota es: ${this._nameMascota} y la enfermedad es: ${this._enfermedad}`)
+    }
 }
 export { Mascota, Animal, Propietario };
